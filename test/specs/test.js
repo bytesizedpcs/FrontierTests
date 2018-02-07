@@ -1,4 +1,4 @@
-const assert = require('assert');
+const assert = require('assert'); 
 
 const HOME_PAGE = 'https://internet.frontier.com/?lp=6108';
 
@@ -41,6 +41,7 @@ describe('Frontier Page', () => {
       findAndClickButton('#js-track-logo');
 
       const url = browser.getUrl();
+      // logo redirects to main page, not page supplied
       assert.equal(url, 'https://internet.frontier.com/');
     });
   });
@@ -94,6 +95,7 @@ describe('Frontier Page', () => {
 
       browser.click('#js-track-form-check-availability');
       const errorMessageText = browser.getText('.form__error');
+      // since the error message is an array of strings, get the first one
       assert.notEqual(errorMessageText[0], undefined || null || '');
     });
   });
@@ -102,6 +104,7 @@ describe('Frontier Page', () => {
     it('should lead to a url', () => {
       const links = $$('a');
 
+      // parse through all links and look at the attributes
       links.forEach(link => {
         const urlAttribute = link.getAttribute('href');
         assert.notEqual(urlAttribute, undefined || null);
