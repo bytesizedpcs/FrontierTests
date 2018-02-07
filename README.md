@@ -26,3 +26,7 @@ The tests check:
 - If the ZIP does not take an invalid length, numeric ZIP
 - If the error message shows on invalid ZIP
 - If all `<a>` tags have a valid `href` link 
+
+First should check large, website breaking errors, such as if the page or components don't load.
+It should also test for interactions from users (inputs, clicks, drags, etc).
+Then should test smaller components that have effects on user experience.
