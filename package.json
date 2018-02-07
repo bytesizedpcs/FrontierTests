@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "webdriverio": "^4.10.2"
+  },
+  "devDependencies": {
+    "wdio-mocha-framework": "^0.5.12"
+  }
+}
